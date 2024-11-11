@@ -1,0 +1,62 @@
+<app-alert></app-alert>
+<div class="flex justify-center items-center min-h-screen bg-gray-100 py-6">
+	<div class="w-full max-w-2xl p-6 bg-white rounded-lg shadow-lg overflow-auto">
+		<h2 class="text-2xl font-bold text-center mb-6 text-gray-800">Form Registrasi</h2>
+
+		<form (ngSubmit)="onSubmit()">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-2">
+                <div class="mb-2">
+                    <label for="nama" class="block text-sm font-medium text-gray-700">Nama</label>
+                    <input type="text" id="nama" name="nama" [(ngModel)]="formRegistrasiData.nama" class="w-full mt-1 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Masukkan nama anda" required />
+                </div>
+
+                <div class="mb-2">
+                    <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
+                    <input type="text" id="username" name="username" [(ngModel)]="formRegistrasiData.username" class="w-full mt-1 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Masukkan username anda" required />
+                </div>
+    
+                <div class="mb-2">
+                    <label for="nomor_telepon" class="block text-sm font-medium text-gray-700">Nomor Telepon</label>
+                    <input type="number" id="nomor_telepon" name="nomor_telepon" [(ngModel)]="formRegistrasiData.nomor_telepon" class="w-full mt-1 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Masukkan nomor telepon anda" required />
+                </div>
+    
+                <div class="mb-2">
+                    <label for="nomor_sim" class="block text-sm font-medium text-gray-700">Nomor SIM</label>
+                    <input type="number" id="nomor_sim" name="nomor_sim" [(ngModel)]="formRegistrasiData.nomor_sim" class="w-full mt-1 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Masukkan nomor SIM anda" required />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 gap-4 mb-2">
+                <div class="mb-2">
+                    <label for="alamat" class="block text-sm font-medium text-gray-700">Alamat</label>
+                    <textarea id="alamat" name="alamat" [(ngModel)]="formRegistrasiData.alamat" rows="3" class="w-full mt-1 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Masukkan alamat anda" required></textarea>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-2">
+                <div class="mb-2">
+                    <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                    <input [type]="showPassword ? 'text' : 'password'" id="password" name="password" [(ngModel)]="formRegistrasiData.password" class="w-full mt-1 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Masukkan password anda" required />
+                </div>
+                
+                <div class="mb-2">
+                    <label for="password_confirmation" class="block text-sm font-medium text-gray-700">Konfirmasi Password</label>
+                    <input [type]="showPassword ? 'text' : 'password'" id="password_confirmation" name="password_confirmation" [(ngModel)]="formRegistrasiData.password_confirmation" class="w-full mt-1 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Masukkan ulang password anda" required />
+                </div>
+            </div>
+            
+            <div class="mb-4 flex items-center">
+                <input type="checkbox" id="showPassword" [(ngModel)]="showPassword" (change)="togglePasswordVisibility()" class="mr-2 cursor-pointer" />
+                <label for="showPassword" class="text-sm text-gray-600 cursor-pointer">Tampilkan Password</label>
+            </div>
+    
+            <div class="mb-2">
+                <button type="submit" class="w-full py-3 px-4 bg-blue-600 text-white font-bold rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed">Registrasi</button>
+            </div>
+
+            <div class="text-center">
+                Sudah punya akun? klik <a href="javascript:void(0)" (click)="goToLogin()" class="text-blue-600 hover:text-blue-700 text-sm">Login</a>
+            </div>
+		</form>
+	</div>
+</div>

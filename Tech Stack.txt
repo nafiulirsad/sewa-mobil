@@ -1,0 +1,6 @@
+Tech Stack:
+- Laravel 10
+- Angular 18
+- MongoDB
+- Tailwind CSS
+- Prime NG

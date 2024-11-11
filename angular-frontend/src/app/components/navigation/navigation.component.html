@@ -1,0 +1,35 @@
+<div class="w-64 bg-white shadow-lg rounded-lg p-6">
+    <h2 class="text-xl font-semibold mb-6 text-center">Menu <br>Penyewaan Mobil</h2>
+    <ul class="space-y-4">
+        <li>
+            <a routerLink="/manajemen-mobil" routerLinkActive="bg-blue-500 text-white rounded-lg" class="block px-4 py-2 rounded-lg hover:bg-blue-500 hover:text-white hover:rounded-lg">Manajemen Mobil</a>
+        </li>
+        <li>
+            <a routerLink="/peminjaman-mobil" routerLinkActive="bg-blue-500 text-white rounded-lg" class="block px-4 py-2 rounded-lg hover:bg-blue-500 hover:text-white hover:rounded-lg">Peminjaman Mobil</a>
+        </li>
+        <li>
+            <a routerLink="/pengembalian-mobil" routerLinkActive="bg-blue-500 text-white rounded-lg" class="block px-4 py-2 rounded-lg hover:bg-blue-500 hover:text-white hover:rounded-lg">Pengembalian Mobil</a>
+        </li>
+        <li>
+            <a (click)="onLogout()" class="block px-4 py-2 rounded-lg hover:bg-blue-500 hover:text-white hover:rounded-lg">Keluar</a>
+        </li>
+    </ul>
+
+    <div class="mt-8 border-t pt-4">
+        <div class="font-semibold text-gray-700">Informasi Pengguna</div>
+        <div class="mt-2 text-sm text-gray-600">
+            <div class="mb-2">
+                <strong>Nama:</strong> {{ penggunaData.nama }}
+            </div>
+            <div class="mb-2">
+                <strong>Alamat:</strong> {{ penggunaData.alamat }}
+            </div>
+            <div class="mb-2">
+                <strong>Nomor Telepon:</strong> {{ penggunaData.nomor_telepon }}
+            </div>
+            <div class="mb-2">
+                <strong>Nomor SIM:</strong> {{ penggunaData.nomor_sim }}
+            </div>
+        </div>
+    </div>
+</div>
